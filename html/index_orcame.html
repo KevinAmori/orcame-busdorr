@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <title>Solicitação de Orçamento | Biz Bus</title>
+</head>
+<body>
+
+<!--  HEADER INCOMPLETO -->
+
+  
+      
+  <header>
+    <nav>
+      <a class="logo" href="#"><strong>Biz<br>Bus</strong></a>
+      <ul class="list">
+        <li class="liSquad"><a href="#"></a>Home</li>
+        <li class="liSquad"><a href="#"></a>Biz Bus</li>
+        <li class="liSquad"><a href="#"></a>Cobertura</li>
+        <li class="liSquad"><a href="#"></a>Produtos</li>
+        <li class="liSquad"><a href="#"></a>Clientes</li>
+        <li class="liSquad"><a href="#"></a>Contato</li>
+      </ul>
+    </nav>
+  </header>
+ 
+  
+
+    <div class="container">
+        <div class="box">
+          <h1>Solicite o Orçamento</h1>
+          <form>
+            <div class="input-group">
+
+              <div class="input-group">
+                <label for="nome">Nome completo</label><p id="sonot"></p>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+              </div>
+            
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <input type="text" id="email" placeholder="Digite seu E-mail" required>
+            </div>
+    
+            <div class="input-group">
+                <label for="email">Telefone</label>
+                <input type="text" id="telefone" placeholder="(xx) xxxx-xxxx" required>
+              </div>
+      
+            <div class="input-group">
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14" placeholder="Digite seu CPF" required>
+              </div>
+      
+            <div class="input-group">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" name="cnpj" id="cnpj" autocomplete="off" maxlength="14" placeholder="Digite seu CNPJ" required>
+              </div>
+
+            <div class="butu">
+              <button type="submit"><a href="#">Enviar Solicitação</a>
+              </button>
+      
+            </div>
+          </form>
+          <div>
+
+          </div>
+    
+        </div>
+        </div>
+      </div>
+    
+      <div class="cob">
+        <img src="../img/cob.png" alt="AREA DE COBERTURA">
+      </div>
+
+
+</body>
+</html>
+
+<script>
+    function format(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+    if (cpf.length > 11) {
+        cpf = cpf.substring(0, 11);
+    }
+    var dv = cpf.substring(9);
+    if (dv.length > 0) {
+        dv = '-' + dv;
+    }
+
+    return cpf.substring(0, 9).split(/(?=(?:\d{3}){0,3}$)/).join('.') + dv;
+}
+
+var cpfInput = document.querySelector('#cpf');
+cpfInput.addEventListener('input', function() {
+    cpfInput.value = format(cpfInput.value);
+});
+
+</script>
